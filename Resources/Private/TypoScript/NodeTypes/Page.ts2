@@ -1,0 +1,20 @@
+prototype(Gmedia.CoreSite:Page) < prototype(TYPO3.Neos:Page) {
+	head {
+		metaViewport = TYPO3.TypoScript:Tag {
+			@position = 'start'
+			tagName = 'meta'
+			attributes = TYPO3.TypoScript:Attributes {
+				name = 'viewport'
+				content = 'width=device-width, initial-scale=1, shrink-to-fit=no'
+			}
+		}
+		metaIe = TYPO3.TypoScript:Tag {
+			@position = 'start'
+			tagName = 'meta'
+			attributes = TYPO3.TypoScript:Attributes {
+				http-equiv = 'x-ua-compatible'
+				content = 'ie=edge'
+			}
+		}
+	}
+}

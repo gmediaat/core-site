@@ -1,0 +1,14 @@
+TYPO3:
+  Neos:
+    typoScript:
+      autoInclude:
+        'Gmedia.CoreSite': TRUE
+  Form:
+    presets:
+      default:
+        formElementTypes:
+          'TYPO3.Form:Base':
+            renderingOptions:
+              templatePathPattern: 'resource://Gmedia.CoreSite/Private/Form/{@type}.html'
+              partialPathPattern: 'resource://Gmedia.CoreSite/Private/Form/Partials/{@type}.html'
+              layoutPathPattern: 'resource://Gmedia.CoreSite/Private/Form/Layouts/{@type}.html'

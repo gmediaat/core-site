@@ -1,0 +1,5 @@
+prototype(Gmedia.CoreSite:Style) {
+	@class = 'Gmedia\\CoreSite\\TypoScript\\StylesImplementation'
+	property = ''
+	value = ''
+}
