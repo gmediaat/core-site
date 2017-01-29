@@ -1,0 +1,95 @@
+'Gmedia.CoreSite:Container':
+  superTypes:
+    'Gmedia.CoreSite:AbstractNode': TRUE
+    'TYPO3.Neos:ContentCollection': TRUE
+  ui:
+    group: 'structure'
+    label: 'Content Section'
+    icon: 'icon-folder-open-alt'
+    inlineEditable: true
+    inspector:
+      groups:
+        structure:
+          label: 'Structure'
+          icon: 'icon-cog'
+          tab: 'layout'
+          position: 1
+        background:
+          label: 'Background'
+          icon: 'icon-picture'
+          position: 1
+  properties:
+    'container':
+      type: string
+      ui:
+        label: 'Content Width'
+        inspector:
+          group: 'structure'
+          editor: 'TYPO3.Neos/Inspector/Editors/SelectBoxEditor'
+          editorOptions:
+            values:
+              '1':
+                label: 'Container Width'
+              '0':
+                label: 'Fluid Width'
+    'colspacing':
+      type: boolean
+      ui:
+        label: 'Enable Column Spacing'
+        inspector:
+          group: 'structure' 
+    'vspacing':
+      type: boolean
+      ui:
+        label: 'Enable Vertical Spacing'
+        inspector:
+          group: 'structure' 
+    'additionalClasses':
+      type: string
+      ui:
+        label: 'Additional Classes'
+        inspector:
+          group: 'structure'
+    'bgColor':
+      type: string
+      ui:
+        label: 'Background Color'
+        inspector:
+          group: 'background'
+    'bgImage':
+      type: 'TYPO3\Media\Domain\Model\ImageInterface'
+      ui:
+        label: 'Background Image'
+        reloadPageIfChanged: true
+        inspector:
+          group: 'background'
+    'bgPosition':
+      type: string
+      ui:
+        label: 'Background Position'
+        reloadPageIfChanged: true
+        inspector:
+          group: 'background'
+          editor: 'TYPO3.Neos/Inspector/Editors/SelectBoxEditor'
+          editorOptions:
+            values:
+              '':
+                label: ''
+              'top left':
+                label: 'Top-Left'
+              'top center':
+                label: 'Top-Center'
+              'top right':
+                label: 'Top-Right'
+              'center left':
+                label: 'Center-Left'
+              'center center':
+                label: 'Center-Center'
+              'center right':
+                label: 'Center-Right'
+              'bottom left':
+                label: 'Bottom-Left'
+              'bottom center':
+                label: 'Bottom-Center'
+              'bottom right':
+                label: 'Bottom-Right'

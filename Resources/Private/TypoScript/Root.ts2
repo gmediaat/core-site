@@ -1,0 +1,2 @@
+include: NodeTypes/*.ts2
+include: TSObjects/*.ts2

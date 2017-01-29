@@ -1,0 +1,21 @@
+## Neos Node Types Override
+'TYPO3.Neos.NodeTypes:Text':
+  properties:
+    text:
+      ui:
+        aloha:
+          'format':
+            'h4': true
+            'h5': true
+            'sub': true
+            'sup': true
+
+'TYPO3.Neos.NodeTypes:TitleMixin':
+  properties:
+    title:
+      ui:
+        aloha:
+          'format':
+            'h4': true
+            'h5': true
+            'h6': true

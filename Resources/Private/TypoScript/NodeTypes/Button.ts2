@@ -1,0 +1,22 @@
+prototype(Gmedia.CoreSite:Button) < prototype(TYPO3.Neos:Content) {
+	text = ${q(node).property('text')}
+	icon = ${q(node).property('btnIcon')}
+	attributes = TYPO3.TypoScript:Attributes {
+		class = TYPO3.TypoScript:RawArray {
+			class1 = 'btn'
+			class2 = ${q(node).property('btnClass')}
+			class3 = ${q(node).property('btnSize')}
+		}
+		href = ${q(node).property('btnLink')}
+		href.@process.convertUris = TYPO3.Neos:ConvertUris {
+	        #forceConversion = true
+	    }
+	}
+	
+	containerAttributes = TYPO3.TypoScript:Attributes {
+		class = TYPO3.TypoScript:Array {
+			10 = 'gc-button '
+			20 = ${q(node).property('btnAlignment')}
+		}
+	}
+}
