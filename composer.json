@@ -1,0 +1,20 @@
+{
+    "description": "Core Site Package, powered by G-Media",
+    "type": "neos-package",
+    "version": "1.0.0-dev",
+    "require": {
+        "typo3/flow": "*",
+        "typo3/neos": ">2.3.7"
+    },
+    "name": "gmedia/coresite",
+    "autoload": {
+        "psr-0": {
+            "Gmedia\\CoreSite": "Classes/"
+        }
+    },
+    "extra": {
+        "neos": {
+            "package-key": "Gmedia.CoreSite"
+        }
+    }
+}

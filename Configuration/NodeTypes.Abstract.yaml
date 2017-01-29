@@ -1,0 +1,45 @@
+'Gmedia.CoreSite:AbstractNode':
+  superTypes:
+    'TYPO3.Neos:Content': TRUE
+    'TYPO3.Neos:Hidable': TRUE
+    'TYPO3.Neos:Timable': TRUE
+  abstract: true
+  ui:
+    inspector:
+      tabs:
+        layout:
+          label: 'Layout'
+          icon: 'icon-cog'
+          position: 999
+      groups:
+        padding:
+          label: 'Padding'
+          icon: 'icon-columns'
+          position: 1
+          collapsed: true
+          tab: 'layout'
+  properties:
+    'padding-top':
+      label: 'Top'
+      type: string
+      ui:
+        inspector:
+          group: 'padding'
+    'padding-bottom':
+      label: 'Bottom'
+      type: string
+      ui:
+        inspector:
+          group: 'padding'
+    'padding-left':
+      label: 'Left'
+      type: string
+      ui:
+        inspector:
+          group: 'padding'
+    'padding-right':
+      label: 'Right'
+      type: string
+      ui:
+        inspector:
+          group: 'padding'

@@ -1,0 +1,16 @@
+prototype(Gmedia.CoreSite:Container) < prototype(TYPO3.Neos:Content) {
+	width = ${q(node).property('container')}
+	colspacing = ${q(node).property('colspacing')}
+	vspacing = ${q(node).property('vspacing')}
+    content = TYPO3.TypoScript:Collection {
+		collection = ${q(node)}
+		itemRenderer = TYPO3.Neos:ContentCollection {
+			nodePath = '.'
+		}
+		itemName = 'node'
+	}
+	bgcolor = ${q(node).property('bgColor')}
+	bgimage = ${q(node).property('bgImage')}
+	bgposition = ${q(node).property('bgPosition')}
+	additionalClasses = ${q(node).property('additionalClasses')}
+}
