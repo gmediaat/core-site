@@ -1,7 +1,7 @@
 {
     "description": "Core Site Package, powered by G-Media",
-    "type": "neos-package",
-    "version": "1.0.0-dev",
+    "type": "typo3-flow-plugin",
+    "version": "1.0.1",
     "require": {
         "typo3/flow": "*",
         "typo3/neos": ">2.3.7"
