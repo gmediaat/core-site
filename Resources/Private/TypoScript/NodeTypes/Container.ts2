@@ -4,6 +4,7 @@ prototype(Gmedia.CoreSite:Container) < prototype(TYPO3.Neos:Content) {
 	vspacing = ${q(node).property('vspacing')}
     content = TYPO3.TypoScript:Collection {
 		collection = ${q(node)}
+		attributes.class = 'row'
 		itemRenderer = TYPO3.Neos:ContentCollection {
 			nodePath = '.'
 		}
@@ -13,4 +14,6 @@ prototype(Gmedia.CoreSite:Container) < prototype(TYPO3.Neos:Content) {
 	bgimage = ${q(node).property('bgImage')}
 	bgposition = ${q(node).property('bgPosition')}
 	additionalClasses = ${q(node).property('additionalClasses')}
+	
+	prototype(TYPO3.Neos:Content).attributes.class = 'col-12'
 }
