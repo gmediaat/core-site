@@ -13,3 +13,8 @@ TYPO3:
               templatePathPattern: 'resource://Gmedia.CoreSite/Private/Form/{@type}.html'
               partialPathPattern: 'resource://Gmedia.CoreSite/Private/Form/Partials/{@type}.html'
               layoutPathPattern: 'resource://Gmedia.CoreSite/Private/Form/Layouts/{@type}.html'
+          'TYPO3.Form:FormElement':
+            properties:
+              containerClassAttribute: 'input'
+              elementClassAttribute: 'gc-form-control'
+              elementErrorClassAttribute: 'form-control-danger'
