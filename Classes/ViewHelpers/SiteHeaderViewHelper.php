@@ -2,7 +2,7 @@
 
 namespace Gmedia\CoreSite\ViewHelpers;
 
-class SiteHeaderViewHelper extends \Neos\Fluid\Core\ViewHelper\AbstractViewHelper {
+class SiteHeaderViewHelper extends \Neos\FluidAdaptor\Core\ViewHelper\AbstractViewHelper {
         /**
          * Render the title and apply some magic
          *
@@ -12,7 +12,7 @@ class SiteHeaderViewHelper extends \Neos\Fluid\Core\ViewHelper\AbstractViewHelpe
          * @param string $leadClass class of the lead text
          * @param string $buttons html of the content section
          * @return string rendered html
-         * @throws \Neos\Fluid\Core\ViewHelper\Exception
+         * @throws \Neos\FluidAdaptor\Core\ViewHelper\Exception
          */
         public function render($containerClass = "site-header-inner", $orientation = 0, $title = NULL, $lead = NULL, $leadClass = "lead", $buttons = NULL) {
 
