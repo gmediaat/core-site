@@ -3,14 +3,14 @@
 namespace Gmedia\CoreSite\ViewHelpers;
 
 use Neos\Flow\Annotations as Flow;
-use Neos\Fluid\Core\ViewHelper\AbstractViewHelper;
-use Neos\Fluid\Core\ViewHelper;
+use Neos\FluidAdaptor\Core\ViewHelper\AbstractViewHelper;
+use Neos\FluidAdaptor\Core\ViewHelper;
 use Neos\Media\Domain\Model\AssetInterface;
 use Neos\Media\Domain\Model\ImageInterface;
 use Neos\Media\Domain\Model\ThumbnailConfiguration;
 use Neos\Flow\Utility\Algorithms;
 
-class ContainerViewHelper extends \Neos\Fluid\Core\ViewHelper\AbstractViewHelper {
+class ContainerViewHelper extends \Neos\FluidAdaptor\Core\ViewHelper\AbstractViewHelper {
 	
 	/**
      * @var boolean
@@ -38,7 +38,7 @@ class ContainerViewHelper extends \Neos\Fluid\Core\ViewHelper\AbstractViewHelper
      * Render the title and apply some magic
      *
      * @return string Translated label or source label / ID key
-     * @throws \Neos\Fluid\Core\ViewHelper\Exception
+     * @throws \Neos\FluidAdaptor\Core\ViewHelper\Exception
      */
     public function render($layout = false, $nospacing = false, $vspacing = true, $bgcolor = "", $bgimage = NULL, $bgpos = "", $additionalClasses = "") {
 	    // Create Object ID
