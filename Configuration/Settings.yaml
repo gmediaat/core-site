@@ -1,4 +1,4 @@
-TYPO3:
+Neos:
   Neos:
     typoScript:
       autoInclude:
@@ -7,12 +7,12 @@ TYPO3:
     presets:
       default:
         formElementTypes:
-          'TYPO3.Form:Base':
+          'Neos.Form:Base':
             renderingOptions:
               templatePathPattern: 'resource://Gmedia.CoreSite/Private/Form/{@type}.html'
               partialPathPattern: 'resource://Gmedia.CoreSite/Private/Form/Partials/{@type}.html'
               layoutPathPattern: 'resource://Gmedia.CoreSite/Private/Form/Layouts/{@type}.html'
-          'TYPO3.Form:FormElement':
+          'Neos.Form:FormElement':
             properties:
               containerClassAttribute: 'input'
               elementClassAttribute: 'gc-form-control'

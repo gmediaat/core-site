@@ -1,0 +1,6 @@
+include: NodeTypes/*.fusion
+include: TSObjects/*.fusion
+
+prototype(Neos.Neos:ContentCollection) {
+	attributes.class.@process.collectionClass >
+}
