@@ -1,0 +1,37 @@
+prototype(Gmedia.CoreSite:GoogleTagManager) < prototype(Neos.Fusion:Tag) {
+    tagName = 'script'
+
+    property = false
+    dataLayer = false
+
+    @context.resource = ${this.resource}
+    @context.callback = ${this.callback}
+
+    resourcePath = Neos.Fusion:ResourceUri {
+        path = ${resource}
+    }
+
+    path = false
+    path.@process.internal = ${this.resourcePath}
+    path.@process.internal.@if.hasInternalResource = ${Type.isString(this.resourcePath) && String.length(this.resourcePath) > 0}
+
+    path.@process.external = ${this.externalResource}
+    path.@process.external.@if.hasExternalResource = ${Type.isString(this.externalResource) && String.length(this.externalResource) > 0}
+
+    content = ${callback}
+
+    content.@process.nestWithoutResource = ${'head.ready("' + this.name + '", function() {' + value + '});'}
+    content.@process.nestWithoutResource {
+        @if.hasNoResource = ${this.path == false || !Type.isString(this.path) || String.length(this.path) == 0}
+    }
+
+
+    content.@process.nestWithResource = ${'head.load({"' + this.name + '": "' + this.path + '"}, function() {' + value + '});'}
+    content.@process.nestWithResource {
+        @if.hasResource = ${Type.isString(this.path) && String.length(this.path) > 0}
+    }
+
+    content.@process.minify = ${String.replace(value, '	', '')}
+
+    @if.hasContent = ${Type.isObject(this.content) || (Type.isString(this.content) && String.length(this.content) > 0)}
+}
