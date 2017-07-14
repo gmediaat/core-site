@@ -1,6 +1,6 @@
 'Gmedia.CorePage:Page':
   superTypes:
-    'Neos.Neos.NodeTypes:Page': TRUE
+    'Neos.NodeTypes:Page': TRUE
   ui:
     inspector:
       groups:
