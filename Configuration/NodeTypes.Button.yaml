@@ -32,7 +32,7 @@
         reloadPageIfChanged: true
         inspector:
           group: 'style'
-          editor: 'TYPO3.Neos/Inspector/Editors/SelectBoxEditor'
+          editor: 'Neos.Neos/Inspector/Editors/SelectBoxEditor'
           editorOptions:
             values:
               'btn-primary':
@@ -50,7 +50,7 @@
         reloadPageIfChanged: true
         inspector:
           group: 'style'
-          editor: 'TYPO3.Neos/Inspector/Editors/SelectBoxEditor'
+          editor: 'Neos.Neos/Inspector/Editors/SelectBoxEditor'
           editorOptions:
             values:
               'gc-button-left':
@@ -68,7 +68,7 @@
         reloadPageIfChanged: true
         inspector:
           group: 'style'
-          editor: 'TYPO3.Neos/Inspector/Editors/SelectBoxEditor'
+          editor: 'Neos.Neos/Inspector/Editors/SelectBoxEditor'
           editorOptions:
             values:
               'btn-sm':
@@ -83,7 +83,7 @@
         label: 'Link'
         inspector:
           group: 'content' 
-          editor: 'TYPO3.Neos/Inspector/Editors/LinkEditor' 
+          editor: 'Neos.Neos/Inspector/Editors/LinkEditor' 
     'btnIcon':
       type: string
       ui:
