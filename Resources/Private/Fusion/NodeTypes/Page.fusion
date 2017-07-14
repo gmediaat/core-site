@@ -1,17 +1,17 @@
 prototype(Gmedia.CoreSite:Page) < prototype(Neos.Neos:Page) {
 	head {
-		metaViewport = TYPO3.TypoScript:Tag {
+		metaViewport = Neos.Fusion:Tag {
 			@position = 'start'
 			tagName = 'meta'
-			attributes = TYPO3.TypoScript:Attributes {
+			attributes = Neos.Fusion:Attributes {
 				name = 'viewport'
 				content = 'width=device-width, initial-scale=1, shrink-to-fit=no'
 			}
 		}
-		metaIe = TYPO3.TypoScript:Tag {
+		metaIe = Neos.Fusion:Tag {
 			@position = 'start'
 			tagName = 'meta'
-			attributes = TYPO3.TypoScript:Attributes {
+			attributes = Neos.Fusion:Attributes {
 				http-equiv = 'x-ua-compatible'
 				content = 'ie=edge'
 			}
