@@ -15,8 +15,8 @@
     },
     "name": "gmedia/coresite",
     "autoload": {
-        "psr-0": {
-            "Gmedia\\CoreSite": "Classes/"
+        "psr-4": {
+            "Gmedia\\CoreSite\\": "Classes"
         }
     },
     "extra": {
