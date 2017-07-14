@@ -2,15 +2,15 @@
 
 namespace Gmedia\CoreSite\ViewHelpers;
 
-use TYPO3\Flow\Annotations as Flow;
-use TYPO3\Fluid\Core\ViewHelper\AbstractViewHelper;
-use TYPO3\Fluid\Core\ViewHelper;
-use TYPO3\Media\Domain\Model\AssetInterface;
-use TYPO3\Media\Domain\Model\ImageInterface;
-use TYPO3\Media\Domain\Model\ThumbnailConfiguration;
-use TYPO3\Flow\Utility\Algorithms;
+use Neos\Flow\Annotations as Flow;
+use Neos\Fluid\Core\ViewHelper\AbstractViewHelper;
+use Neos\Fluid\Core\ViewHelper;
+use Neos\Media\Domain\Model\AssetInterface;
+use Neos\Media\Domain\Model\ImageInterface;
+use Neos\Media\Domain\Model\ThumbnailConfiguration;
+use Neos\Flow\Utility\Algorithms;
 
-class ContainerViewHelper extends \TYPO3\Fluid\Core\ViewHelper\AbstractViewHelper {
+class ContainerViewHelper extends \Neos\Fluid\Core\ViewHelper\AbstractViewHelper {
 	
 	/**
      * @var boolean
@@ -19,13 +19,13 @@ class ContainerViewHelper extends \TYPO3\Fluid\Core\ViewHelper\AbstractViewHelpe
 	
 	/**
      * @Flow\Inject
-     * @var \TYPO3\Media\Domain\Service\ThumbnailService
+     * @var \Neos\Media\Domain\Service\ThumbnailService
      */
     protected $thumbnailService;
 	
 	/**
      * @Flow\Inject
-     * @var \TYPO3\Media\Domain\Service\AssetService
+     * @var \Neos\Media\Domain\Service\AssetService
      */
 	protected $assetService;
 	
@@ -38,17 +38,12 @@ class ContainerViewHelper extends \TYPO3\Fluid\Core\ViewHelper\AbstractViewHelpe
      * Render the title and apply some magic
      *
      * @return string Translated label or source label / ID key
-     * @throws \TYPO3\Fluid\Core\ViewHelper\Exception
+     * @throws \Neos\Fluid\Core\ViewHelper\Exception
      */
     public function render($layout = false, $nospacing = false, $vspacing = true, $bgcolor = "", $bgimage = NULL, $bgpos = "", $additionalClasses = "") {
 	    // Create Object ID
 		$uuid = Algorithms::generateUUID();
     
-		/*$this->tag->addAttribute("id","node-".$uuid);
-		$this->tag->addAttribute("class",$this->getClassString());
-		$this->tag->addAttribute("style",$this->getStylesString());
-		$this->tag->setContent($this->renderChildren());
-        return $this->tag->render();*/
         if($this->getStylesString() != null) {
         	$outputStr = '<style>#node-'.$uuid.'{'.$this->getStylesString().'}</style>';
         } else {

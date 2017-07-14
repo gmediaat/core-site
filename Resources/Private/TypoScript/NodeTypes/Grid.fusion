@@ -1,0 +1,3 @@
+prototype(Neos.Neos.NodeTypes:MultiColumn) < prototype(Neos.Neos:Content) {
+	attributes.class = ${'row row-' + q(node).property('layout')}
+}

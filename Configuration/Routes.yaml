@@ -5,16 +5,16 @@
   name:  'Frontend'
   uriPattern: '<FrontendSubRoutes>'
   defaults:
-    '@package':    'TYPO3.Neos'
+    '@package':    'Neos.Neos'
     '@controller': 'Frontend\Node'
     '@action':     'show'
     '@format':     'html'
   routeParts:
     'node':
-      handler:     'TYPO3\Neos\Routing\FrontendNodeRoutePartHandlerInterface'
+      handler:     'Neos\Neos\Routing\FrontendNodeRoutePartHandlerInterface'
   subRoutes:
     'FrontendSubRoutes':
-      package: 'TYPO3.Neos'
+      package: 'Neos.Neos'
       suffix:  'Frontend'
       variables:
         'defaultUriSuffix': ''

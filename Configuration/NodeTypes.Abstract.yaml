@@ -1,8 +1,8 @@
 'Gmedia.CoreSite:AbstractNode':
   superTypes:
-    'TYPO3.Neos:Content': TRUE
-    'TYPO3.Neos:Hidable': TRUE
-    'TYPO3.Neos:Timable': TRUE
+    'Neos.Neos:Content': TRUE
+    'Neos.Neos:Hidable': TRUE
+    'Neos.Neos:Timable': TRUE
   abstract: true
   ui:
     inspector:
