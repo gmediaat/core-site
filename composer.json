@@ -10,7 +10,7 @@
         "neos/swiftmailer":"^6.0",
         "wegmeister/recaptcha": "^1.0",
         "league/csv":"^8.2",
-        "jonnitto/sitemap": "^3.0"
+        "jonnitto/sitemap": "^3.0",
         "neos/seo": "*"
     },
     "name": "gmedia/coresite",
