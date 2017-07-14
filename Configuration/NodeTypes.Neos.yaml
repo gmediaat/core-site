@@ -1,5 +1,5 @@
 ## Neos Node Types Override
-'Neos.Neos.NodeTypes:Text':
+'Neos.NodeTypes:Text':
   properties:
     text:
       ui:
@@ -10,7 +10,7 @@
             'sub': true
             'sup': true
 
-'Neos.Neos.NodeTypes:TitleMixin':
+'Neos.NodeTypes:TitleMixin':
   properties:
     title:
       ui:
