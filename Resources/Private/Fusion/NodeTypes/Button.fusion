@@ -14,7 +14,7 @@ prototype(Gmedia.CoreSite:Button) < prototype(Neos.Neos:Content) {
 	}
 	
 	containerAttributes = Neos.Fusion:Attributes {
-		class = Neos.TypoScript:Array {
+		class = Neos.Fusion:Array {
 			10 = 'gc-button '
 			20 = ${q(node).property('btnAlignment')}
 		}
