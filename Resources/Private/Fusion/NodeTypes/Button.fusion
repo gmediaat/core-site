@@ -1,8 +1,8 @@
 prototype(Gmedia.CoreSite:Button) < prototype(Neos.Neos:Content) {
 	text = ${q(node).property('text')}
 	icon = ${q(node).property('btnIcon')}
-	attributes = Neos.TypoScript:Attributes {
-		class = Neos.TypoScript:RawArray {
+	attributes = Neos.Fusion:Attributes {
+		class = Neos.Fusion:RawArray {
 			class1 = 'btn'
 			class2 = ${q(node).property('btnClass')}
 			class3 = ${q(node).property('btnSize')}
@@ -13,7 +13,7 @@ prototype(Gmedia.CoreSite:Button) < prototype(Neos.Neos:Content) {
 	    }
 	}
 	
-	containerAttributes = Neos.TypoScript:Attributes {
+	containerAttributes = Neos.Fusion:Attributes {
 		class = Neos.TypoScript:Array {
 			10 = 'gc-button '
 			20 = ${q(node).property('btnAlignment')}
