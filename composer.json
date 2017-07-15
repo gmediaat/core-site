@@ -1,7 +1,7 @@
 {
     "description": "Core Site Package, powered by G-Media",
     "type": "neos-package",
-    "version": "2.0.2",
+    "version": "2.0.3",
     "require": {
         "neos/flow": "^4.0",
         "neos/neos": "^3.0",
