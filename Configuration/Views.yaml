@@ -1,0 +1,5 @@
+# Pagination
+-
+  requestFilter: 'isPackage("TYPO3.TYPO3CR") && isController("Paginate") && isAction("index")'
+  options:
+    templateRootPathPattern: 'resource://Gmedia.CoreSite/Private/Templates'
