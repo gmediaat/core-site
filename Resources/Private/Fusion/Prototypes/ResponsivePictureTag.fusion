@@ -1,0 +1,140 @@
+prototype(Gmedia.CoreSite:ResponsivePictureTagSource) < prototype(Neos.Fusion:Value) {
+	asset = FALSE
+	width = 1000
+	height = 1000
+	
+	@context {
+		asset = ${this.asset}
+		width = ${this.width}
+		height = ${this.height}
+	}
+	
+	@if.isAsset = ${Type.isObject(asset)}
+	
+	src = Neos.Neos:ImageUri {
+		asset = ${asset}
+		maximumWidth = ${width}
+	}
+	
+	value = ${this.src + ' ' + width + 'w'}
+	
+}				
+			
+prototype(Gmedia.CoreSite:ResponsivePictureTag) < prototype(Neos.Fusion:Value) {
+	
+	asset = false
+	defaultWidth = 1000
+	defaultHeight = 1000
+	useHolderJS = ${Configuration.setting('Gmedia.CoreSite.Fusion.Prototypes.ResponsivePictureTag.useHolderJS') || false}
+	useLazyload = ${Configuration.setting('Gmedia.CoreSite.Fusion.Prototypes.ResponsivePictureTag.useLazyload') || false}
+	
+	@context {
+		asset = ${this.asset}
+		defaultWidth = ${this.defaultWidth}
+		defaultHeight = ${this.defaultHeight}
+		useHolderJS = ${this.useHolderJS}
+		useLazyload = ${this.useLazyload}
+	}
+	
+	value = Neos.Fusion:Case {
+		isAsset {
+			condition = ${Type.isObject(asset)}
+			#condition = ${true}
+			
+			prototype(Gmedia.CoreSite:ResponsivePictureTagSource) {
+				asset = ${asset}
+			}
+			
+			@context.srcset = Neos.Fusion:RawArray {
+				4000 = Gmedia.CoreSite:ResponsivePictureTagSource {
+					width = 4000
+				}
+				
+				3200 = Gmedia.CoreSite:ResponsivePictureTagSource {
+					width = 3200
+				}
+				
+				2400 = Gmedia.CoreSite:ResponsivePictureTagSource {
+					width = 2400
+				}
+				
+				1600 = Gmedia.CoreSite:ResponsivePictureTagSource {
+					width = 1600
+				}
+				
+				980 = Gmedia.CoreSite:ResponsivePictureTagSource {
+					width = 980
+				}
+				
+				785 = Gmedia.CoreSite:ResponsivePictureTagSource {
+					width = 785
+				}
+				
+				480 = Gmedia.CoreSite:ResponsivePictureTagSource {
+					width = 480
+				}
+				
+				
+			}
+			
+			renderer = Neos.Fusion:Tag {
+				tagName = 'picture'
+				attributes = Neos.Fusion:Attributes {
+					class = Neos.Fusion:RawArray {
+						standardClass = 'rbp'
+					}
+				}
+				content = Neos.Fusion:Tag {
+					tagName = 'img'
+					attributes = Neos.Fusion:Attributes {
+						class = Neos.Fusion:RawArray {
+							standardClass = 'rbp-src'
+							lazyload = 'lazyload'
+							lazyload.@if.useLazyload = ${useLazyload}
+						}
+						
+						data-sizes = 'auto'
+						data-sizes.@if.useLazyload = ${useLazyload}
+						
+						data-srcset = ${Array.join(srcset, ',')}
+						data-srcset.@if.useLazyload = ${useLazyload}
+						
+						srcset = ${Array.join(srcset, ',')}
+						srcset.@if.useLazyload = ${!useLazyload}
+						
+						src = Neos.Neos:ImageUri {
+							asset = ${asset}
+							width = ${defaultWidth}
+							height = ${defaultHeight}
+						}
+					}
+				}
+			}
+			
+		}
+		
+		holderJS {
+			condition = ${useHolderJS}
+			renderer = Neos.Fusion:Tag {
+				tagName = 'picture'
+				attributes = Neos.Fusion:Attributes {
+					class = Neos.Fusion:RawArray {
+						standardClass = 'rbp'
+					}
+				}
+				content = Neos.Fusion:Tag {
+					tagName = 'img'
+					attributes = Neos.Fusion:Attributes {
+						class = Neos.Fusion:RawArray {
+							standardClass = 'rbp-src'
+							fallbackClass = 'rbp-holder'
+						}
+						data-src = ${"holder.js/100%x100/auto"}
+					}
+				}
+			}
+			
+		}
+	}
+	
+}
