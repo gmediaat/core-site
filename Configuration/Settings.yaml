@@ -17,3 +17,11 @@ Neos:
               containerClassAttribute: 'input'
               elementClassAttribute: 'gc-form-control'
               elementErrorClassAttribute: 'form-control-danger'
+              
+Gmedia:
+  CoreSite:
+    Fusion:
+      Prototypes:
+        ResponsivePictureTag:
+          useHolderJS: false
+          useLazyload: false
