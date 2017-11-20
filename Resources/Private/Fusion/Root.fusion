@@ -1,5 +1,5 @@
 include: NodeTypes/*.fusion
-include: TSObjects/*.fusion
+include: Prototypes/*.fusion
 
 prototype(Neos.Neos:ContentCollection) {
 	attributes.class.@process.collectionClass >
