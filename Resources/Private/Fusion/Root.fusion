@@ -1,6 +1,2 @@
 include: NodeTypes/*.fusion
 include: Prototypes/*.fusion
-
-prototype(Neos.Neos:ContentCollection) {
-	attributes.class.@process.collectionClass >
-}
