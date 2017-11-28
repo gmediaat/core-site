@@ -1,0 +1,17 @@
+prototype(Gmedia.CoreSite:HeadJsResource) < prototype(Neos.Fusion:Value) {
+	
+	name = false
+	path = false
+	
+	@context.path = ${this.path}
+	
+	resource = Neos.Fusion:ResourceUri {
+		path = ${path}
+	}
+	
+	value = ${this.name + ': "' + this.resource + '"'}
+	
+	@if.hasName = ${Type.isString(this.name) && String.length(this.name) > 0}
+	@if.hasPath = ${Type.isString(this.path) && String.length(this.path) > 0}
+	
+}

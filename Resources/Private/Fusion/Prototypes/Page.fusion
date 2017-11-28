@@ -1,0 +1,40 @@
+prototype(Neos.Neos:Page) {
+	head {
+		metaViewport = Neos.Fusion:Tag {
+			@position = 'start'
+			tagName = 'meta'
+			attributes = Neos.Fusion:Attributes {
+				name = 'viewport'
+				content = 'width=device-width, initial-scale=1, shrink-to-fit=no'
+			}
+		}
+		
+		metaIe = Neos.Fusion:Tag {
+			@position = 'start'
+			tagName = 'meta'
+			attributes = Neos.Fusion:Attributes {
+				http-equiv = 'x-ua-compatible'
+				content = 'ie=edge'
+			}
+		}
+		
+		javascripts {
+			headJS = Neos.Fusion:Tag {
+			   tagName = 'script'
+			   attributes = Neos.Fusion:Attributes {
+			   	src = Neos.Fusion:ResourceUri {
+			   		path = 'resource://Gmedia.CoreSite/Public/JavaScript/head.load.min.js'
+			   	}
+			   }
+			}
+			initHeadJs = Neos.Fusion:Tag {
+			   	tagName = 'script'
+			   	scripts = Neos.Fusion:RawArray
+
+			   	@if.hasScripts = ${!Array.isEmpty(this.scripts)}
+			   	content = ${Array.join(this.scripts, ',')}
+			   	content.@process.nest = ${'head.js({' + value + '});'}
+			}
+		}
+	}
+}
