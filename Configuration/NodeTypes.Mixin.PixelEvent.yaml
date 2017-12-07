@@ -1,0 +1,35 @@
+'Gmedia.CoreSite:FacebookPixelEvent':
+  abstract: true
+  ui:
+    inspector:
+      groups:
+        facebookPixelEvent:
+          label: 'Facebook Pixel Event'
+          position: 100
+          icon: 'icon-facebook'
+  properties:
+    'pixelEventTrack':
+      type: 'boolean'
+      defaultValue: FALSE
+      ui:
+        label: 'Event aufzeichnen?'
+        inspector:
+          group: 'facebookPixelEvent'
+    'pixelEventIdentifier':
+      type: 'string'
+      defaultValue: ''
+      ui:
+        label: 'Name'
+        inspector:
+          group: 'facebookPixelEvent'
+      validation:
+        'Neos.Neos/Validation/StringLengthValidator':
+          minimum: 3
+          maximum: 100    
+    'pixelEventValue':
+      type: 'string'
+      defaultValue: ''
+      ui:
+        label: 'Wert'
+        inspector:
+          group: 'facebookPixelEvent'

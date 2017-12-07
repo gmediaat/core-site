@@ -1,10 +1,8 @@
 {namespace form=Neos\Form\ViewHelpers}
 <f:form.validationResults for="{element.identifier}">
-	<div class="gc-form-group{f:if(condition: validationResults.flattenedErrors, then: ' has-danger')}"<f:if condition="{element.rootForm.renderingOptions.previewMode}"> data-element="{form:form.formElementRootlinePath(renderable:element)}"</f:if>>
+	<div class="form-group{f:if(condition: validationResults.flattenedErrors, then: ' has-danger')}"<f:if condition="{element.rootForm.renderingOptions.previewMode}"> data-element="{form:form.formElementRootlinePath(renderable:element)}"</f:if>>
 		<label class="gc-form-label" for="{element.uniqueIdentifier}">{element.label -> f:format.nl2br()}<f:if condition="{element.required}"><f:render partial="Neos.Form:Field/Required" /></f:if></label>
-		<div class="gc-form-field">
-			<f:render section="field" />
-		</div>
+		<f:render section="field" />
 		<f:if condition="{validationResults.flattenedErrors}">
 			<div class="form-control-feedback">
 				<f:for each="{validationResults.errors}" as="error">
