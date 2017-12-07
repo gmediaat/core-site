@@ -1,4 +1,4 @@
-prototype(Gmedia.CoreSite:ResponsivePictureTagSource) < prototype(Neos.Fusion:Value) {
+prototype(Gmedia.CoreSite:ResponsivePictureTagResource) < prototype(Neos.Fusion:Value) {
 	asset = FALSE
 	width = 1000
 	height = 1000
@@ -18,7 +18,32 @@ prototype(Gmedia.CoreSite:ResponsivePictureTagSource) < prototype(Neos.Fusion:Va
 	
 	value = ${this.src + ' ' + width + 'w'}
 	
-}				
+}
+
+prototype(Gmedia.CoreSite:ResponsivePictureTagSource) < prototype(Neos.Fusion:Tag) {
+	tagName = 'source'
+	
+	media = ''
+	asset = false
+	srcset = false
+	
+	@context {
+		media = ${this.media}
+		asset = ${this.asset}
+		srcset = ${this.srcset}
+	}
+	
+	attributes = Neos.Fusion:Attributes {
+		media = ${media}
+		media.@if.isset = ${String.length(media) > 0}
+		
+		data-srcset = ${Array.join(srcset, ',')}
+		data-srcset.@if.useLazyload = ${useLazyload}
+		
+		srcset = ${Array.join(srcset, ',')}
+		srcset.@if.useLazyload = ${!useLazyload}
+	}
+}
 			
 prototype(Gmedia.CoreSite:ResponsivePictureTag) < prototype(Neos.Fusion:Value) {
 	
@@ -41,36 +66,36 @@ prototype(Gmedia.CoreSite:ResponsivePictureTag) < prototype(Neos.Fusion:Value) {
 			condition = ${Type.isObject(asset)}
 			#condition = ${true}
 			
-			prototype(Gmedia.CoreSite:ResponsivePictureTagSource) {
+			prototype(Gmedia.CoreSite:ResponsivePictureTagResource) {
 				asset = ${asset}
 			}
 			
 			@context.srcset = Neos.Fusion:RawArray {
-				4000 = Gmedia.CoreSite:ResponsivePictureTagSource {
+				4000 = Gmedia.CoreSite:ResponsivePictureTagResource {
 					width = 4000
 				}
 				
-				3200 = Gmedia.CoreSite:ResponsivePictureTagSource {
+				3200 = Gmedia.CoreSite:ResponsivePictureTagResource {
 					width = 3200
 				}
 				
-				2400 = Gmedia.CoreSite:ResponsivePictureTagSource {
+				2400 = Gmedia.CoreSite:ResponsivePictureTagResource {
 					width = 2400
 				}
 				
-				1600 = Gmedia.CoreSite:ResponsivePictureTagSource {
+				1600 = Gmedia.CoreSite:ResponsivePictureTagResource {
 					width = 1600
 				}
 				
-				980 = Gmedia.CoreSite:ResponsivePictureTagSource {
+				980 = Gmedia.CoreSite:ResponsivePictureTagResource {
 					width = 980
 				}
 				
-				785 = Gmedia.CoreSite:ResponsivePictureTagSource {
+				785 = Gmedia.CoreSite:ResponsivePictureTagResource {
 					width = 785
 				}
 				
-				480 = Gmedia.CoreSite:ResponsivePictureTagSource {
+				480 = Gmedia.CoreSite:ResponsivePictureTagResource {
 					width = 480
 				}
 				
@@ -84,30 +109,42 @@ prototype(Gmedia.CoreSite:ResponsivePictureTag) < prototype(Neos.Fusion:Value) {
 						standardClass = 'rbp'
 					}
 				}
-				content = Neos.Fusion:Tag {
-					tagName = 'img'
-					attributes = Neos.Fusion:Attributes {
-						class = Neos.Fusion:RawArray {
-							standardClass = 'rbp-src'
-							lazyload = 'lazyload'
-							lazyload.@if.useLazyload = ${useLazyload}
-						}
-						
-						data-sizes = 'auto'
-						data-sizes.@if.useLazyload = ${useLazyload}
-						
-						data-srcset = ${Array.join(srcset, ',')}
-						data-srcset.@if.useLazyload = ${useLazyload}
-						
-						srcset = ${Array.join(srcset, ',')}
-						srcset.@if.useLazyload = ${!useLazyload}
-						
-						src = Neos.Neos:ImageUri {
-							asset = ${asset}
-							width = ${defaultWidth}
-							height = ${defaultHeight}
-						}
+				
+				content = Neos.Fusion:Array {
+					
+					// <source>-Tag
+					
+					mainSource = Gmedia.CoreSite:ResponsivePictureTagSource {
+						srcset = ${srcset}
+						media = 'all and (orientation: landscape)'
 					}
+					
+					// Fallback <img>-Tag
+					
+					img = Neos.Fusion:Tag {
+						tagName = 'img'
+						attributes = Neos.Fusion:Attributes {
+							class = Neos.Fusion:RawArray {
+								standardClass = 'rbp-src'
+								lazyload = 'lazyload'
+								lazyload.@if.useLazyload = ${useLazyload}
+							}
+							
+							data-sizes = 'auto'
+							data-sizes.@if.useLazyload = ${useLazyload}
+							
+							data-srcset = ${Array.join(srcset, ',')}
+							data-srcset.@if.useLazyload = ${useLazyload}
+							
+							srcset = ${Array.join(srcset, ',')}
+							srcset.@if.useLazyload = ${!useLazyload}
+							
+							src = Neos.Neos:ImageUri {
+								asset = ${asset}
+								width = ${defaultWidth}
+								height = ${defaultHeight}
+							}
+						}
 				}
 			}
 			
