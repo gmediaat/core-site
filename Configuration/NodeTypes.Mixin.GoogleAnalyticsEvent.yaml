@@ -1,0 +1,57 @@
+'Gmedia.CoreSite:GoogleAnalyticsEvent':
+  abstract: true
+  ui:
+    inspector:
+      groups:
+        googleAnalyticsEvent:
+          label: 'Google Analytics Event'
+          position: 100
+          icon: 'icon-google'
+  properties:
+    'googleEventTrack':
+      type: 'boolean'
+      defaultValue: FALSE
+      ui:
+        label: 'Event aufzeichnen?'
+        inspector:
+          group: 'googleAnalyticsEvent'
+    'googleEventLabel':
+      type: 'string'
+      defaultValue: ''
+      ui:
+        label: 'Label'
+        inspector:
+          group: 'googleAnalyticsEvent'
+      validation:
+        'Neos.Neos/Validation/StringLengthValidator':
+          minimum: 3
+          maximum: 100    
+    'googleEventAction':
+      type: 'string'
+      defaultValue: ''
+      ui:
+        label: 'Aktion'
+        inspector:
+          group: 'googleAnalyticsEvent'
+      validation:
+        'Neos.Neos/Validation/StringLengthValidator':
+          minimum: 3
+          maximum: 100  
+    'googleEventCategory':
+      type: 'string'
+      defaultValue: ''
+      ui:
+        label: 'Kategorie'
+        inspector:
+          group: 'googleAnalyticsEvent'
+      validation:
+        'Neos.Neos/Validation/StringLengthValidator':
+          minimum: 3
+          maximum: 100        
+    'googleEventValue':
+      type: 'string'
+      defaultValue: ''
+      ui:
+        label: 'Wert'
+        inspector:
+          group: 'googleAnalyticsEvent'

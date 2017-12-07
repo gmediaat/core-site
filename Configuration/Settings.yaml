@@ -10,15 +10,23 @@ Neos:
         formElementTypes:
           'Neos.Form:Base':
             renderingOptions:
-              templatePathPattern: 'resource://Gmedia.CoreSite/Private/Form/{@type}.html'
-              partialPathPattern: 'resource://Gmedia.CoreSite/Private/Form/Partials/{@type}.html'
               layoutPathPattern: 'resource://Gmedia.CoreSite/Private/Form/Layouts/{@type}.html'
+          'Neos.Form:Form':
+            renderingOptions:
+              renderableNameInTemplate: form
+              previousButtonClassAttribute: 'btn btn-cancel'
+              nextButtonClassAttribute: 'btn btn-primary'
+              submitButtonClassAttribute: 'btn btn-primary'
+              templatePathPattern: 'resource://Gmedia.CoreSite/Private/Form/{@type}.html'
           'Neos.Form:FormElement':
             properties:
-              containerClassAttribute: 'input'
-              elementClassAttribute: 'gc-form-control'
+              containerClassAttribute: 'form-group'
+              elementClassAttribute: 'form-control'
               elementErrorClassAttribute: 'form-control-danger'
-
+          'Neos.Form:MultiLineText':
+            properties:
+              elementClassAttribute: 'form-control'    
+              
 Gmedia:
   CoreSite:
     Fusion:
