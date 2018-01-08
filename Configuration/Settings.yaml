@@ -17,7 +17,9 @@ Neos:
               previousButtonClassAttribute: 'btn btn-cancel'
               nextButtonClassAttribute: 'btn btn-primary'
               submitButtonClassAttribute: 'btn btn-primary'
+              submitButtonLabel: 'Jetzt kontaktieren!'
               templatePathPattern: 'resource://Gmedia.CoreSite/Private/Form/{@type}.html'
+              partialPathPattern: 'resource://Gmedia.CoreSite/Private/Form/Partials/{@type}.html'
           'Neos.Form:FormElement':
             properties:
               containerClassAttribute: 'form-group'
