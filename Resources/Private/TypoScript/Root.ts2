@@ -1,5 +1,5 @@
 include: NodeTypes/*.ts2
-include: TSObjects/*.ts2
+include: Prototypes/*.ts2
 
 prototype(TYPO3.Neos:ContentCollection) {
 	attributes.class.@process.collectionClass >

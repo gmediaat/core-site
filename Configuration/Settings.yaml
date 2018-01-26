@@ -17,10 +17,17 @@ TYPO3:
               containerClassAttribute: 'input'
               elementClassAttribute: 'gc-form-control'
               elementErrorClassAttribute: 'form-control-danger'
-              
+
 Gmedia:
   CoreSite:
     options:
       templateRootPath: 'resource://Gmedia.CoreSite/Private/Templates'
+    JpegOptimization:
+      enabled: true
     apiKeys:
       google: "AIzaSyD5P6w4K2JP2_8RDoc4h75wZeeMwA4jPls"
+    TypoScript:
+      Prototypes:
+        ResponsivePictureTag:
+          useHolderJS: false
+          useLazyload: false
