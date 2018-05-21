@@ -4,7 +4,7 @@
     "version": "2.1.2",
     "require": {
         "neos/flow": "^4.0",
-        "neos/neos": "^3.0",
+        "neos/neos": "^3.0"
     },
     "name": "gmedia/coresite",
     "autoload": {
