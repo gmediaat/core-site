@@ -7,11 +7,6 @@
         "neos/neos": "^3.0"
     },
     "name": "gmedia/coresite",
-    "autoload": {
-        "psr-4": {
-            "Gmedia\\CoreSite\\": "Classes"
-        }
-    },
     "extra": {
         "neos": {
             "package-key": "Gmedia.CoreSite"
