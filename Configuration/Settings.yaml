@@ -5,7 +5,8 @@ Neos:
         'Gmedia.CoreSite': TRUE
   Form:
     presets:
-      default:
+      gmedia-coresite:
+        parentPreset: 'default'
         formElementTypes:
           'Neos.Form:Base':
             renderingOptions:
@@ -18,7 +19,3 @@ Neos:
               elementClassAttribute: 'gc-form-control'
               elementErrorClassAttribute: 'form-control-danger'
               
-Gmedia:
-  CoreSite:
-    apiKeys:
-      google: "AIzaSyD5P6w4K2JP2_8RDoc4h75wZeeMwA4jPls"
