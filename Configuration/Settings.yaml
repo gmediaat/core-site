@@ -6,7 +6,8 @@ Neos:
   Form:
     presets:
       default:
-        title: 'LeitSatz'
+        parentPreset: 'default'
+        title: 'G-Media CoreSite'
         formElementTypes:
           'Neos.Form:Base':
             renderingOptions:
@@ -36,5 +37,3 @@ Gmedia:
         ResponsivePictureTag:
           useHolderJS: false
           useLazyload: false
-    apiKeys:
-      google: "AIzaSyD5P6w4K2JP2_8RDoc4h75wZeeMwA4jPls"
