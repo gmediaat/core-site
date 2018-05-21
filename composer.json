@@ -1,16 +1,10 @@
 {
     "description": "Core Site Package, powered by G-Media",
     "type": "neos-package",
-    "version": "2.0.4",
+    "version": "2.0.5",
     "require": {
         "neos/flow": "^4.0",
-        "neos/neos": "^3.0",
-        "neos/redirecthandler-neosadapter": "~2.0",
-        "neos/redirecthandler-databasestorage": "2.0",
-        "neos/swiftmailer":"^6.0",
-        "league/csv":"^8.2",
-        "jonnitto/sitemap": "^3.0",
-        "neos/seo": "*"
+        "neos/neos": "^3.0"
     },
     "name": "gmedia/coresite",
     "autoload": {
